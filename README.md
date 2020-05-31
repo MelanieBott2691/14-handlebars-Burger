@@ -148,8 +148,8 @@ Having an active and healthy commit history on GitHub is important for your futu
 
      * Setup the `index.handlebars` to have the template that Handlebars can render onto.
 
-     * Create a button in `index.handlebars` that will submit the user input into the database. -->
-<!-- 
+     * Create a button in `index.handlebars` that will submit the user input into the database.
+
 #### Directory structure
 
 All the recommended files and directories from the steps above should look like the following structure:
