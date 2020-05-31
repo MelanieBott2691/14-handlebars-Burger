@@ -1,7 +1,7 @@
 <div class="main-container">
     <img src+"assets/img/ " width="300" />
     <h1>My Burger, My Way!</h1>
-    <div class="container">
+    {{!-- <div class="container">
         <div class="centered" class="list">
             <h2>Burgers:</h2>
                 <ul class="list-group" style="align-content: center;">
@@ -36,7 +36,7 @@
                     {{/each}}
             </ul>
         </div>
-    </div>
+    </div> --}}
 
     <div class="container">
         <div class="centered" class="list">
@@ -52,17 +52,3 @@
         </div>
     </div>
     </div>
-
-<script type="text/javascript">
-    $(".delete").on("click", function(event) {
-        event.preventDefault();
-        console.log(this.id);
-
-        $.ajax("/burgers/" + this.id, {
-            type: "DELETE"
-        }).then(function() {
-            location.reload();
-            console.log("Deleted id " + this.id);
-        })
-    });
-</script>
