@@ -133,7 +133,7 @@ Having an active and healthy commit history on GitHub is important for your futu
    * `burger.js`
 
 4. Create the `router` for the app, and export the `router` at the end of your file. -->
-
+<!-- 
 #### View setup
 
 1. Inside your `burger` directory, create a folder named `views`.
@@ -148,8 +148,8 @@ Having an active and healthy commit history on GitHub is important for your futu
 
      * Setup the `index.handlebars` to have the template that Handlebars can render onto.
 
-     * Create a button in `index.handlebars` that will submit the user input into the database.
-
+     * Create a button in `index.handlebars` that will submit the user input into the database. -->
+<!-- 
 #### Directory structure
 
 All the recommended files and directories from the steps above should look like the following structure:
@@ -188,7 +188,7 @@ All the recommended files and directories from the steps above should look like 
     ├── index.handlebars
     └── layouts
         └── main.handlebars
-```
+``` -->
 
 ### Reminder: Submission on BCS
 
@@ -226,14 +226,3 @@ After completing the homework please add the piece to your portfolio. Make sure 
 
 - - -
 
-### One More Thing
-
-This is a really tough homework assignment, but we want you to put in your best effort to finish it.
-
-If you have any questions about this project or the material we have covered, please post them in the community channels in slack so that your fellow developers can help you! If you're still having trouble, you can come to office hours for assistance from your instructor and TAs.
-
-### Reminder
-
-When trying to connect remotely to your Heroku database on an open network such as a coffee shop, library, or even your University WiFi, it will be blocked. If you are experiencing a Heroku connection error, this could be why.
-
-**Good Luck!**
