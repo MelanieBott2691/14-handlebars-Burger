@@ -1,4 +1,4 @@
-<h1>Burger List</h1>
+<h1>My Burger, My Way!</h1>
 <h3></h3>
 
 <ul>
@@ -6,11 +6,27 @@
         <li>
             <p>ID: {{this.id}}</p>
             <p>Task: {{this.burger_name}}</p>
+            <p>Burger: {{this.burger_name}}</p><button type="submit" id="{{this.id}}">Delete</button>
+
         </li>
         {{/each}}
 </ul>
 
 <form action="/burgers" method="POST">
-    <textarea type="text" name="burgers"></textarea>
+    <textarea type="text" name="burgers">Enter what type of burger you would like and Click "Submit"!</textarea>
     <button type="submit">Submit</button>
     </form>
+
+<script type="text/javascript">
+    $(".delete").on("click", function(event) {
+        event.preventDefault();
+        console.log(this.id);
+
+        $.ajax("/burgers/" + this.id, {
+            type: "DELETE"
+        }).then(function() {
+            location.reload();
+            console.log("Deleted id " + this.id);
+        })
+    });
+</script>
