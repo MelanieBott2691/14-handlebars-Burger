@@ -39,7 +39,7 @@ $(".create-form").on("submit", function(event) {
     event.preventDefault();
 
     var newBurger = {
-        name: $("#ca").val().trim(),
+        name: $("#hb").val().trim(),
         devoured: $("[name=devoured]:checked").val().trim()
     };
 
@@ -53,7 +53,7 @@ $(".create-form").on("submit", function(event) {
     });
     });
 // trash burger onclick even by creating a delete action
-$(".delete-cat").on("click", function(event) {
+$(".delete-burger").on("click", function(event) {
     var id = $(this).data("id");
     // send the delete request
     $.ajax("/api/burgers/" + id, {
