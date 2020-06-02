@@ -1,11 +1,41 @@
+.big-banner {
+    background-image: url("../img/burgers.png");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 body {
-    background-color: yellowgreen;
+    background-color: rgb(205, 183, 125);
 }
 
 h1 {
     font-family: 'Chelsea Market', cursive;
-    position: absolute;
+    position: center;
     top: 30%;
     text-align: center;
-    font-size: 32px;
+    font-size: 82px;
+    color: rgb(179, 41, 41);
+}
+h2 {
+    font-size: 38px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(65, 31, 31);
+    position: center;
+}
+#burger-order {
+    font-size: 24px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+input#newBurger {
+    border-radius: 8px;
+    height: 50px;
+}
+button#addBurger {
+    height: 40px;
+    width: 110px;
+    color: white;   
+    font-size: 14px;
+}
+#footer-content {
+    opacity: 50%;
 }
