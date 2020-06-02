@@ -2,13 +2,13 @@
 var connection = require("../config/connection.js");
 
 // create question marks function
-function createQmarks(num) {
-  var arr = [];
-  for(var i = 0; i < num; i++){
-    arr.push("?");
-  }
-  return arr.toString();
-}
+// function createQmarks(num) {
+//   var arr = [];
+//   for(var i = 0; i < num; i++){
+//     arr.push("?");
+//   }
+//   return arr.toString();
+// }
   //turn the string into a readable query
 function translateSql(ob) {
   var arr = [];
@@ -26,47 +26,59 @@ function translateSql(ob) {
 }
 // Create a variable called ORM and export it with all selections and queries
 var orm = {
-  all: function(table, cb){
-    var dbQuery = "SELECT * FROM " + table + ";";
-    connection.query(dbQuery, function(err, res) {
+  all: function(tableInput, cb) {
+    var dbQuery = "SELECT * FROM " + tableInput + ";";
+    connection.query(dbQuery, function(err, result) {
       if(err) {
         throw err;
       }
       // callback
-      cb(res);
+      cb(result);
     });
   },
   create: function(table, cols, vals, cb) {
-    var dbQuery = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" + createQmarks(vals.length) + ") ";
-  
+    // var dbQuery = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" + createQmarks(vals.length) + ") ";
+    var dbQuery = "INSERT INTO " + table;
+    dbQuery += " (";
+    dbQuery += cols.toString();
+    dbQuery += ") ";
+    dbQuery += "VALUES (";
+    dbQuery += ") ";
+
     console.log(dbQuery);
-    connection.query(dbQuery, vals, function(err, res) {
+    connection.query(dbQuery, vals, function(err, result) {
       if (err) {
         throw err;
       }
-      cb(res);
+      cb(result);
     });
   },
   update: function(table, objColVals, condition, cb) {
-    var dbQuery= "UPDATE " + table + " SET " + translateSql(objColVals) + " WHERE " + condition;
+    var dbQuery= "UPDATE " + table;
+    
+    dbQuery += " SET ";
+    dbQuery += translateSql(objColVals);
+    dbQuery += " WHERE ";
+    dbQuery += condition;
 
     console.log(dbQuery);
-    connection.query(dbQuery, function(err, res) {
+    connection.query(dbQuery, function(err, result) {
       if (err) {
         throw err;
       }
-      cb(res);
+      cb(result);
     });
   },
   delete: function(table, condition, cb) {
-    var dbQuery = "DELETE FROM " + table + "WHERE " + condition;
+    var dbQuery = "DELETE FROM " + table;
+    dbQuery += "WHERE ";
+    dbQuery += condition;
     
-    console.log(dbQuery);
-    connection.query(dbQuery, function(err, res) {
+    connection.query(dbQuery, function(err, result) {
       if (err) {
         throw err;
       }
-      cb(res);
+      cb(result);
     });
   }
 };
