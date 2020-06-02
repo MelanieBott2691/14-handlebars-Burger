@@ -43,20 +43,17 @@ router.put("/api/burgers/:id", function(req, res) {
       res.status(200).end();
     }
   });
-
-  router.delete(condition, function(req, res) {
+});
+  router.delete("/api/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
   
-    console.log("condition", condition);
-  
       burger.delete(condition, function(result){
-      if ((result, changedRows == 0)) {
+      if (result.affectedRows == 0) {
         return res.status(404).end();
       } else {
         res.status(200).end();
       }
-    })
-  })
+    });
 });
 
 // Export routes for server.js to use.
