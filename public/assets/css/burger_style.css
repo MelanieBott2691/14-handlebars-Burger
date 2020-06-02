@@ -1,7 +1,10 @@
+body {
+    background-color: yellowgreen;
+}
+
 h1 {
     font-family: 'Chelsea Market', cursive;
     position: absolute;
-    left: 0;
     top: 30%;
     text-align: center;
     font-size: 32px;

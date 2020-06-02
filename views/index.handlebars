@@ -1,14 +1,14 @@
 <div class="main-container">
     <img src+"assets/img/ " width="300" />
     <h1>My Burger, My Way!</h1>
-    {{!-- <div class="container">
+    <div class="jumbotron">
         <div class="centered" class="list">
             <h2>Burgers:</h2>
                 <ul class="list-group" style="align-content: center;">
                 {{#each burgers}}
                     {{unless this.devoured}}
                         <li class="list-group-item">
-                          {{this.burger_name}}
+                         <a>{{this.burger_name}}</a>
                           <form action="/{{this.id}}?_method=PUT" method="POST">
                           <input type="hidden" name="devoured" value="true">
                           <button type="submit" class="btn btn-outline-warning">Devour!</button>
