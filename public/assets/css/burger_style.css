@@ -1,11 +1,10 @@
-.big-banner {
-    background-image: url("../img/burgers.png");
-    height: 100%;
+#big-banner {
+    height: 80vh;
     background-repeat: no-repeat;
-    background-size: cover;
-}
+    /* background-size: cover; */
+} 
 body {
-    background-color: rgb(196, 186, 160);
+    background-color: rgb(193, 187, 173);
 }
 
 h1 {
