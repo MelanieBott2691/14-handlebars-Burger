@@ -1,7 +1,6 @@
 <div class="main-container">
     <div class="jumbotron big-banner" style="height: 500px; padding-top: 150px;"></div>
 </div>
-{{!-- ================ bootstrap template --}}
 
   <!-- Main Content -->
   <div class="container">
@@ -15,12 +14,12 @@
     </div>
   </div>
   <br>
-  <div class="container" id="burger-order">
-    <div class="centered" class="list">
-    <h2 class="post-subtitle"><strong>Order the Burger. Devour the Burger!</strong></h2>
+  <div class="container" id="burger-order-subtitle">
+          <h2 class="post-subtitle"><strong>Order the Burger. Devour the Burger!</strong></h2>
     </div>
     <hr>
     <br>
+    <div class="container" id="burger-order">
     <div class="row">
         <div class="col-sm-6">
             <div class="panel panle-default">
@@ -32,7 +31,7 @@
                         {{#each burgers}}
                         {{#unless this.devoured}}
                         <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
-                        <button type="submit" class="btn btn-outline-danger"><strong>Devour!</strong></button>
+                        <button type="submit" class="btn btn-outline-danger" id="btn-devour"><strong>Devour!</strong></button>
                     {{/unless}}
                     {{/each}}
                 </ul>
@@ -62,7 +61,7 @@
                     <input type="text" id="newBurger" name="burger">
                     <button type="button" class="btn btn-danger btn-lg" data-toggle="button" id="addBurger">Add Burger!</button>
   </div>
-     
+</div>
   <hr>
 
   <!-- Footer -->

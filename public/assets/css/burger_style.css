@@ -5,7 +5,7 @@
     background-size: cover;
 }
 body {
-    background-color: rgb(205, 183, 125);
+    background-color: rgb(196, 186, 160);
 }
 
 h1 {
@@ -13,18 +13,29 @@ h1 {
     position: center;
     top: 30%;
     text-align: center;
-    font-size: 82px;
+    font-size: 65px;
     color: rgb(179, 41, 41);
 }
 h2 {
     font-size: 38px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: rgb(65, 31, 31);
-    position: center;
+    text-align: center;
+}
+.panel-heading {
+    font-size: 32px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#burger-order-subtitle {
+    font-size: 32px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 #burger-order {
-    font-size: 24px;
+    font-size: 22px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#btn-devour {
+    width: 200px;
 }
 input#newBurger {
     border-radius: 8px;
