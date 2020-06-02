@@ -1,4 +1,4 @@
-INSERT INTO burgers (burger_name) VALUES('Hawaiian BBQ Burger');
-INSERT INTO burgers (burger_name) VALUES('Little Bacon Cheeseburger');
-INSERT INTO burgers (burger_name) VALUES('Scrum-Delicious Burger');
-INSERT INTO burgers (burger_name) VALUES('Chile Veggie Burger');
+USE burgers_db;
+INSERT INTO burgers(burger_name, devoured) 
+VALUES('Hawaiian BBQ Burger', false), ('Hawaiian BBQ Burger', false), ('Little Bacon Cheeseburger', false), 
+('Scrum-Delicious Burger', false), ('Chile Veggie Burger', false);

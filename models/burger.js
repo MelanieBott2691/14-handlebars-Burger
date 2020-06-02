@@ -4,6 +4,7 @@ var orm = require("../config/orm.js");
 var burgers = {
   all: function(cb) {
     orm.all("burgers", function(res) {
+    throw err;
       cb(res);
     });
   },
