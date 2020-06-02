@@ -33,7 +33,7 @@
                     
                     <ul class="list-group" style="align-content: center;">
                         {{#each burgers}}
-                        {{unless this.devoured}}
+                        {{#unless this.devoured}}
                         <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
                         <button type="submit" class="btn btn-outline-warning">Devour!</button>
                     {{/unless}}
@@ -48,7 +48,7 @@
                 <div class="panel-body">
                     <ul class="list-group" style="align-content: center;">
                         {{#each burgers}}
-                        {{if devoured}}
+                        {{#if devoured}}
                         <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
                         <button type="button" class="deleteburger btn btn-outline-warning" id="deleteburger" data-id="{{this.id}}">Devour!</button>
                     {{/if}}
