@@ -2,37 +2,20 @@
 
 // function to make sure everything loads first
 $(function() {
-    // $(".change-devour").on("click", function(event) {
-    //     var id = $(this).data("id");
-    //     var newDevour = $(this).data("newDevour");
-
-    //     var newDevourState = {
-    //         devoured: newDevour
-    //     };
-
-    //     $.ajax("/api/burgers", {
-    //         type: "PUT",
-    //         data: newDevourState
-    //     }).then(function(){
-    //         console.log("Added new burger");
-    //         location.reload();
-    //     });
-    // });
-    // onclick event
-    $(".eatburger").on("click", function(event) {
-        // event.preventDefault();
-        var id = $(this).data("id");
-        var newDevoured = $(this).data("newburger");
+    
+    $(".eat-burger").on("click", function(event) {
+console.log("eat-burger")    
+    var id = $(this).data("id");
 
         var devouredState = {
-            devoured: newDevoured
+            devoured: false
         };
            // put request 
     $.ajax("/api/burgers/" + id, {
         type: "PUT",
         data: devouredState 
     }).then(function() {
-        console.log("Burger devoured", newDevoured);
+        console.log("Burger devoured");
         location.reload();
     });
 });
@@ -41,10 +24,10 @@ $(".create-form").on("submit", function(event) {
     event.preventDefault();
 
     var newBurger = {
-        name: $("#hb").val().trim(),
-        devoured: $("[name=devoured]:checked").val().trim()
+        burger_name: $("#hb").val().trim(),
+        devoured: false
     };
-
+    console.log(newBurger)
     // send the POST request
     $.ajax("/api/burgers/", {
         type: "POST",

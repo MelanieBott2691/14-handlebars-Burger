@@ -1,16 +1,17 @@
 <div class="main-container">
     {{!-- <div class="jumbotron jumbotron-fluid big-banner"></div> --}}
-    <div id="big-banner" class="jumbotron jumbotron-fluid" style="background-image: url('../assets/img/burgers.png'); background-size: 100%;">
+    <div id="big-banner" class="jumbotron jumbotron-fluid"
+        style="background-image: url('../assets/img/burgers.png'); background-size: 100%;">
+    </div>
 </div>
-</div>
-  <!-- Main Content -->
+<!-- Main Content -->
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-            <h1 class="post-title">My Burger; My Way!</h1>
-            <br><br>
-        </div>
+            <div class="post-preview">
+                <h1 class="post-title">My Burger; My Way!</h1>
+                <br><br>
+            </div>
         </div>
     </div>
 </div>
@@ -31,9 +32,10 @@
                     <ul class="list-group" style="align-content: center;">
                         {{#each burgers}}
                         {{#unless devoured}}
-                        <span><strong> {{this.id}} {{this.burger_name}}</strong></span>
-                        <button type="submit" class="btn btn-outline-danger" id="btn-devour"><strong>Devour!</strong></button>
-                       {{!-- {{burgers/burger-block devoured=true}} --}}
+                        <span><strong> {{id}} {{burger_name}}</strong></span>
+                        <button type="submit" class="btn btn-outline-danger eat-burger"
+                            data-id={{id}}><strong>Devour!</strong></button>
+                        {{!-- {{burgers/burger-block devoured=true}} --}}
                         {{/unless}}
                         {{/each}}
                     </ul>
@@ -49,9 +51,10 @@
                     <ul class="list-group" style="align-content: center;">
                         {{#each burgers}}
                         {{#if devoured}}
-                            <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
-                            <button type="button" class="deleteburger btn btn-outline-warning" id="deleteburger" data-id="{{this.id}}">Devour!</button>
-                            {{!-- {{burgers/burger-block devoured=false}} --}}
+                        <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+                        <button type="button" class="deleteburger btn btn-outline-warning" id="deleteburger"
+                            data-id="{{this.id}}">Devour!</button>
+                        {{!-- {{burgers/burger-block devoured=false}} --}}
                         {{/if}}
                         {{/each}}
                     </ul>
@@ -59,20 +62,16 @@
             </div>
         </div>
     </div>
-<br>
-<br>
-<h2>If you don't see what you want, order any burger BELOW!</h2>
-<form class="create-form">
-    <div class="form-group">
-        <label for="hb">Type Your Burger of Choice in the Box:</label>
-        <input type="text" id="hb" name="name">
-    </div>
-
-
-    {{!-- <label for="newBurger">If you don't see what you want, order any burger HERE!</label>
-        <input type="text" id="newBurger" name="burger"> --}}
-        <button type="submit" class="btn btn-danger btn-lg" data-toggle="button" id="addBurger">Add Burger!</button>
-</form>
+    <br>
+    <br>
+    <h2>If you don't see what you want, order any burger BELOW!</h2>
+    <form class="create-form">
+        <div class="form-group">
+            <label for="hb">Type Your Burger of Choice in the Box:</label>
+            <input type="text" id="hb" name="name">
+            <button type="submit" class="btn btn-danger btn-lg" data-toggle="button" id="addBurger">Add Burger!</button>
+        </div>
+    </form>
 </div>
 
 <hr>
@@ -83,14 +82,14 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <ul class="list-inline text-right" id="footer-content">
-                <li class="list-inline-item">
-                    <a href="https://dashboard.heroku.com/apps">
-                        <img src="/assets/img/heroku.png" width="8%">
-                    <a href="https://melaniebott2691.github.io/14-handlebars-Burger/">
-                        <img src="/assets/img/GitHub.png" width="6%">
-                    </a>
-                    <p class="copyright">Copyright &copy; Burger Barn 2020</p>
-                </li>
+                    <li class="list-inline-item">
+                        <a href="https://dashboard.heroku.com/apps">
+                            <img src="/assets/img/heroku.png" width="8%">
+                            <a href="https://melaniebott2691.github.io/14-handlebars-Burger/">
+                                <img src="/assets/img/GitHub.png" width="6%">
+                            </a>
+                            <p class="copyright">Copyright &copy; Burger Barn 2020</p>
+                    </li>
                 </ul>
             </div>
         </div>
