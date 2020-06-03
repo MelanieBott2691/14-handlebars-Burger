@@ -1,14 +1,6 @@
 // Import MySQL connection to create a connection to the entire application
 var connection = require("../config/connection.js");
 
-// create question marks function
-// function createQmarks(num) {
-//   var arr = [];
-//   for(var i = 0; i < num; i++){
-//     arr.push("?");
-//   }
-//   return arr.toString();
-// }
   //turn the string into a readable query
 function translateSql(ob) {
   var arr = [];

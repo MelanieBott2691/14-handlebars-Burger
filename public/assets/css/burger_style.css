@@ -1,6 +1,7 @@
 #big-banner {
     height: 80vh;
     background-repeat: no-repeat;
+    background-color: rgb(193, 187, 173);
     /* background-size: cover; */
 } 
 body {

@@ -22,6 +22,8 @@ $(function() {
     $(".eatburger").on("click", function(event) {
         // event.preventDefault();
         var id = $(this).data("id");
+        var newDevoured = $(this).data("newburger");
+
         var devouredState = {
             devoured: newDevoured
         };
@@ -30,7 +32,7 @@ $(function() {
         type: "PUT",
         data: devouredState 
     }).then(function() {
-        console.log("Burger devoured");
+        console.log("Burger devoured", newDevoured);
         location.reload();
     });
 });
