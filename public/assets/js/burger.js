@@ -56,4 +56,37 @@ $(".trashburger").on("click", function(event) {
     
 });
 });
+// user input add new burger ======================
+// $(function() {
 
+//     $(".eatNewBurger").on("submit", function(event) {
+//         event.preventDefault();
+    
+//         var newBurger = {
+//             burger_name: $("#newburger").val().trim(),
+//             devoured: 0
+//         };
+//         // console.log(newBurger)
+        
+//         $.ajax("/api/burgers/", {
+//             type: "POST",
+//             data: newBurger
+//         }).then(function() {
+//             console.log("Added new burger");
+//             location.reload();
+//         });
+//         });
+
+// // trash new user burger onclick even by creating a delete action
+// $(".btnCreate").on("click", function(event) {
+//     event.preventDefault();
+
+//     var id = $(this).data("id");
+
+//     // send the delete request
+//     $.ajax({
+//         type: "DELETE",
+//         url: "/api/burgers/" + id
+//     }).then(location.reload());
+// });
+// });

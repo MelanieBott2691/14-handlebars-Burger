@@ -97,15 +97,17 @@
     <br>
     <hr>
     <br>
-    {{!-- ======== Add Burger Section ======== --}}
+    {{!-- ======== User Add Burger Section ======== --}}
     <div class="row text-center add">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="input text-center">
                 <h4 class="heading headTitle" id="add">Can't Find What You're Looking For? Add A Burger Here!</h4>
-                <div class="form-group">
-                    <form method="POST" action="api/burgers" class="addOne text-center">
-                        <textarea id="textArea" type="text" name="burger_name" rows="2" cols="40"></textarea>
-                        <button id="btnCreate" type="submit">Create Burger!</button>
+                
+                    <form class ="create-form" method="POST" action="api/burgers" class="addOne text-center">
+                        <div class="form-group">
+                        <input type="text" placeholder="What's Your Burger?" id="newburger" name="name">
+                        {{!-- <textarea id="textArea" type="text" name="burger_name" rows="2" cols="40"></textarea> --}}
+                        <button id="addburger" class="eatNewBurger" type="submit">Create Burger!</button>
                     </form>
                 </div>
             </div>
