@@ -2,14 +2,34 @@
 
 // function to make sure everything loads first
 $(function() {
-    
-    $(".eat-burger").on("click", function(event) {
-console.log("eat-burger")    
-    var id = $(this).data("id");
 
+$(".create-form").on("submit", function(event) {
+    event.preventDefault();
+
+    var newBurger = {
+        burger_name: $("#newburger").val().trim(),
+        devoured: 0
+    };
+    // console.log(newBurger)
+    
+    $.ajax("/api/burgers/", {
+        type: "POST",
+        data: newBurger
+    }).then(function() {
+        console.log("Added new burger");
+        location.reload();
+    });
+    });
+
+    $(".eat-burger").on("click", function(event) {
+        event.preventDefault();
+console.log("eat-burger")    
+
+    var id = $(this).data("id");
         var devouredState = {
-            devoured: false
+            devoured: 1
         };
+
            // put request 
     $.ajax("/api/burgers/" + id, {
         type: "PUT",
@@ -20,33 +40,20 @@ console.log("eat-burger")
     });
 });
 
-$(".create-form").on("submit", function(event) {
-    event.preventDefault();
-
-    var newBurger = {
-        burger_name: $("#hb").val().trim(),
-        devoured: false
-    };
-    console.log(newBurger)
     // send the POST request
-    $.ajax("/api/burgers/", {
-        type: "POST",
-        data: newBurger
-    }).then(function() {
-        console.log("Added new burger");
-        location.reload();
-    });
-    });
+    
 // trash burger onclick even by creating a delete action
 $(".delete-burger").on("click", function(event) {
+    event.preventDefault();
+
     var id = $(this).data("id");
+
     // send the delete request
-    $.ajax("/api/burgers/" + id, {
-        type: "DELETE"
-    }).then(function() {
-        console.log("Deleted Burger", id);
-    location.reload();
-    });
+    $.ajax({
+        type: "DELETE",
+        url: "/api/burger/" + id
+    }).then(location.reload());
+    
 });
 });
 

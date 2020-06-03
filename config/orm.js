@@ -1,11 +1,18 @@
 // Import MySQL connection to create a connection to the entire application
 var connection = require("../config/connection.js");
 
-  //turn the string into a readable query
-function translateSql(ob) {
+function printQuestMark(num) {
   var arr = [];
-  for(var key in ob){
-    var value = ob[key];
+  for (var i = 0; i < num; i++) {
+    arr.push("?");
+  }
+  return arr.toString();
+}
+  //turn the string into a readable query
+function objToSql(ob) {
+  var arr = [];
+    for (var key in ob) {
+      var value = ob[key];
     if (Object.hasOwnProperty.call(ob, key)) {
       if(typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
@@ -21,9 +28,7 @@ var orm = {
   all: function(tableInput, cb) {
     var dbQuery = "SELECT * FROM " + tableInput + ";";
     connection.query(dbQuery, function(err, result) {
-      if(err) {
-        throw err;
-      }
+      if(err) throw err;
       // callback
       cb(result);
     });
@@ -35,9 +40,9 @@ var orm = {
     dbQuery += cols.toString();
     dbQuery += ") ";
     dbQuery += "VALUES (";
+    dbQuery += printQuestMark(vals.length);
     dbQuery += ") ";
 
-    console.log(dbQuery);
     connection.query(dbQuery, vals, function(err, result) {
       if (err) {
         throw err;
@@ -49,30 +54,28 @@ var orm = {
     var dbQuery= "UPDATE " + table;
     
     dbQuery += " SET ";
-    dbQuery += translateSql(objColVals);
+    dbQuery += objToSql(objColVals);
     dbQuery += " WHERE ";
     dbQuery += condition;
 
     console.log(dbQuery);
     connection.query(dbQuery, function(err, result) {
-      if (err) {
-        throw err;
-      }
+      if (err) throw err;
       cb(result);
     });
   },
-  delete: function(table, condition, cb) {
-    var dbQuery = "DELETE FROM " + table;
-    dbQuery += "WHERE ";
-    dbQuery += condition;
+  // delete: function(table, condition, cb) {
+  //   var dbQuery = "DELETE FROM " + table;
+  //   dbQuery += "WHERE ";
+  //   dbQuery += condition;
     
-    connection.query(dbQuery, function(err, result) {
-      if (err) {
-        throw err;
-      }
-      cb(result);
-    });
-  }
+  //   connection.query(dbQuery, function(err, result) {
+  //     if (err) {
+  //       throw err;
+  //     }
+  //     cb(result);
+  //   });
+  
 };
 
 // Export the orm object
