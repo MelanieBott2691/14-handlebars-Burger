@@ -21,7 +21,7 @@ $(".create-form").on("submit", function(event) {
     });
     });
 
-    $(".eat-burger").on("click", function(event) {
+    $(".eatburger").on("click", function(event) {
         event.preventDefault();
 console.log("eat-burger")    
 
@@ -43,7 +43,7 @@ console.log("eat-burger")
     // send the POST request
     
 // trash burger onclick even by creating a delete action
-$(".delete-burger").on("click", function(event) {
+$(".trashburger").on("click", function(event) {
     event.preventDefault();
 
     var id = $(this).data("id");
@@ -51,7 +51,7 @@ $(".delete-burger").on("click", function(event) {
     // send the delete request
     $.ajax({
         type: "DELETE",
-        url: "/api/burger/" + id
+        url: "/api/burgers/" + id
     }).then(location.reload());
     
 });

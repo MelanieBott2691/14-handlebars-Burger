@@ -55,7 +55,7 @@ router.delete("/api/burgers/:id", function(req, res) {
   });
 });
 });
-module.exports = routers;
+module.exports = router;
 // Create all our routes and set up logic within those routes where required.
 // router.get("/burgers", function(req, res) {
 //   burger.all(function(data) {
