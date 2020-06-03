@@ -29,7 +29,7 @@
             <div class="form-group">
                 <br>
                 <label for="newburger">Order Burgers From Menu</label>
-                {{!-- <input type="text" id="newburger" name="burger"> --}}
+                {{!-- additional burger selection not in sql --}}
                 <select data-placeholder="" id="newburger" name="burger">
                     <option value="Nothing Selected" selected>Please Select a Sandwich</option>
                     <option value="Hamburger">Hamburger</option>
@@ -42,8 +42,8 @@
                     <option value="VeggieBurger">Veggie Burger</option>
                 </select>
 
-                <button type="submit" class="btn btn-success" id="addburger">
-                    <span class="fa fa-thumbs-up"></span>
+                <button type="submit" class="btn" id="addburger">
+                    <span class="fa fa-search" style="font-size:18px"></span>
                 </button>
             </div>
         </form>
@@ -63,9 +63,9 @@
                     <ul>
                         {{#each burgers}}
                         {{#unless devoured}}
-                        <span><strong> {{this.id}} {{this.burger_name}}</strong></span>
+                        <span> {{this.id}} {{this.burger_name}} </span>
                         <button type="button" class="eatburger btn btn-warning" id="eatbutton" data-id="{{this.id}}"
-                            data-newDevoured="{{devour}}"><span class="fa fa-usd">Devour!</span></button>
+                            data-newDevoured="{{devour}}"><span class="fa fa-usd"> Order!</span></button>
                         <hr>
                         {{/unless}}
                         {{/each}}
@@ -82,9 +82,10 @@
                     <ul>
                         {{#each burgers}}
                         {{#if devoured}}
-                        <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
-                        <button type="button" class="trashburger btn btn-danger" id="trashbutton" data-id="{{this.id}}"
-                            data-newDevoured="{{devour}}"><span class="fa fa-trash">Trash</span></button>
+                        <span> {{this.id}} - {{this.burger_name}} </span>
+                        <button type="button" class="trashburger btn btn-danger" id="trashbutton" data-id="{{this.id}}" style="font-size:18px">Devour!  <i class="fa fa-trash-o"></i></button>
+                        {{!-- <button type="button" class="trashburger btn btn-danger" id="trashbutton" data-id="{{this.id}}"
+                            data-newDevoured="{{devour}}"><i class="fa fa-trash-o" style="font-size:36px;color:rgb(156, 31, 31)"></i></button> --}}
                         <hr>
                         {{/if}}
                         {{/each}}
