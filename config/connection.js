@@ -1,8 +1,8 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
 
-// JAWSdb connection
-var connection;
+// // JAWSdb connection
+// var connection;
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
@@ -15,13 +15,14 @@ if (process.env.JAWSDB_URL) {
 });
 }
 // Create the connection and console log to make sure its connected
-connection.connect(function(err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
-  }
-  console.log("connected as id " + connection.threadId);
-});
+// connection.connect(function(err) {
+//   if (err) {
+//     console.error("error connecting: " + err.stack);
+//     return;
+//   }
+//   console.log("connected as id " + connection.threadId);
+// });
 
 // Export connection for our ORM to use.
+connection.connect();
 module.exports = connection;
