@@ -21,7 +21,7 @@ Using an ORM the app uses 3 basic CRUD functions;
 
 ### Deployment
 
-* **[This app is deployed in Heroku]** (https://handlebarsburger.herokuapp.com/)
+[This app is deployed in Heroku](https://handlebarsburger.herokuapp.com/)
 
 ### How the app works!
 
